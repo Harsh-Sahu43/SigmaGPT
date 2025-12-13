@@ -9,7 +9,7 @@ const router = express.Router();
 router.post("/test", async(req, res) => {
     try {
         const thread = new Thread({
-            threadId: "abc",
+            threadId: "allIn1",
             title: "Testing New Thread2"
         });
 
@@ -17,7 +17,7 @@ router.post("/test", async(req, res) => {
         res.send(response);
     } catch(err) {
         console.log(err);
-        res.status(500).json({error: "Failed to save in DB"});
+        res.status(500).json({error: "Failed to save in DB", e: err});
     }
 });
 
